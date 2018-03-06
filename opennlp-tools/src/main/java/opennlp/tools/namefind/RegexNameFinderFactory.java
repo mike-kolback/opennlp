@@ -100,6 +100,25 @@ public class RegexNameFinderFactory {
         return "PHONE_NUM";
       }
     },
+    COLLEGE {
+      @Override
+      public Map<String, Pattern[]> getRegexMap() {
+        Pattern[] p = new Pattern[2];
+        p[0] = Pattern.compile("university\\s+of\\s+\\w+",
+                Pattern.CASE_INSENSITIVE);
+        p[1] = Pattern.compile("\\w+\\s+university",
+                Pattern.CASE_INSENSITIVE);
+
+        Map<String, Pattern[]> regexMap = new HashMap<>();
+        regexMap.put(getType(), p);
+        return regexMap;
+      }
+
+      @Override
+      public String getType() {
+        return "COLLEGE";
+      }
+    },
     EMAIL {
       @Override
       public Map<String, Pattern[]> getRegexMap() {

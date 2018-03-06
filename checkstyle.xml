@@ -31,6 +31,10 @@
 
   <module name="SuppressionCommentFilter"/>
 
+  <module name="NewlineAtEndOfFile">
+    <property name="severity" value="ignore" />
+  </module>
+
   <module name="RegexpHeader">
     <property name="header"
               value="^.*$\n^\W*Licensed to the Apache Software Foundation \(ASF\) under one or more$"/>
